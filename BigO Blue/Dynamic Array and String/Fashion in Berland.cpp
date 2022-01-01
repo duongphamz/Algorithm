@@ -1,36 +1,50 @@
-// Arrays.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// BigO.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
-
 using namespace std;
+
 
 int main()
 {
-    int nA, nB;
-    int k, m;
+    int n;
 
-    cin >> nA >> nB;
-    cin >> k >> m;
-    int maxNumberOfArrayA = 0;
-    int minNumberOfArrayB = 0;
+    cin >> n;
+    if (n == 0) {
+        cout << "NO";
+        return 0;
+    }
 
-    for (int i = 0; i < nA; i++) {
-        int number;
-        cin >> number;
-        if (i + 1 == k) {
-            maxNumberOfArrayA = number;
+    if (n == 1) {
+        int button;
+        cin >> button;
+        if (button == 0) {
+            cout << "NO";
+        }
+        else {
+            cout << "YES";
+        }
+        return 0;
+    }
+    int numberOfButtonsNotFastened = 0;
+
+    for (int i = 0; i < n; i++) {
+        int button;
+        cin >> button;
+        if (button == 0) {
+            numberOfButtonsNotFastened++;
+        }
+        if (numberOfButtonsNotFastened == 2) {
+            cout << "NO";
+            return 0;
         }
     }
 
-    for (int j = 0; j < nB; j++) {
-        int number;
-        cin >> number;
-        if (j == nB - m) {
-            minNumberOfArrayB = number;
-        }
+    if (numberOfButtonsNotFastened == 1) {
+        cout << "YES";
     }
-
-    cout << (maxNumberOfArrayA < minNumberOfArrayB ? "YES" : "NO");
+    else {
+        cout << "NO";
+    }
+    return 0;
 }
-
