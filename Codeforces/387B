@@ -1,0 +1,41 @@
+// George and Round.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    int n, m;
+    vector<int> vn, vm;
+
+    cin >> n >> m;
+   
+    for (int i = 0; i < n; i++) {
+        int number;
+        cin >> number;
+        vn.push_back(number);
+    }
+
+    for (int j = 0; j < m; j++) {
+        int number;
+        cin >> number;
+        vm.push_back(number);
+    }
+    int j = 0;
+    int count = 0;
+    for (int i = 0; i < n; i++) {
+        while (j < m) {
+            if (vn[i] <= vm[j]) {
+                count++;
+                j++;
+                break;
+            }
+            j++;
+        }
+    }
+    
+
+    cout << n - count;
+}
