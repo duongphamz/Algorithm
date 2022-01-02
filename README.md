@@ -1,2 +1,2 @@
 # Algorithm
-My Leetcode solutions using Swift programming language
+My solutions for problems using C++/Swift programming language
