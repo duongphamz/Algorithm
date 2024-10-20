@@ -1,0 +1,13 @@
+class Solution {
+    func maxProfit2(_ prices: [Int]) -> Int {
+        var totalProfit = 0
+        
+        for i in 1..<prices.count {
+            if prices[i] > prices[i-1] {
+                totalProfit += prices[i] - prices[i-1]
+            }
+        }
+        
+        return totalProfit
+    }
+}
